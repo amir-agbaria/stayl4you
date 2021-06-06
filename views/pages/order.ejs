@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="css/order.css" type="text/css" />
+
+<div class="container my-3">
+    <h2 class="text-end"> פרטי הזמנה</h2>
+    <!-- Message -->
+    <p class="alert alert-danger" id="msg" style="display: none">נא להשלים את הפרטים החסרים בהזמנה</p>
+
+    <div class="section details-order">
+        <p class="title-section">פרטי משלוח</p>
+        <div class="content">
+        <%if(user.firstName && user.lastName){%>
+            <p class="section-row mb-0"><%- user.firstName + ' ' + user.lastName %></p>
+        <%}else{%>
+            <p class="section-row red-color mb-0">*יש לעדכן שם מלא</p>
+        <%}%>
+        <%if(user.phone){%>
+            <p class="section-row"><%- user.phone %></p>
+        <%}else{%>
+            <p class="section-row red-color mb-0"> יש לעדכן מספר פלאפון*</p>
+        <%}%> 
+        <%if(user.email){%> 
+            <p class="section-row"><%- user.email %></p>
+        <%}else{%>
+            <p class="section-row red-color mb-0">*יש לעדכן כתובת מייל</p>
+        <%}%>
+        <%if(user.address && user.address.city && user.address.street && user.address.zipCode && user.address.state){%> 
+            <p class="section-row mb-0"><%- user.address.city +', '+ user.address.street %></p>
+            <p class="section-row"><%- user.address.state + ', ' + user.address.zipCode %></p>
+        <%}else{%>
+            <p class="section-row red-color mb-0">*יש לעדכן כתובת</p>
+        <%}%>
+        </div>
+            <button type="button" class="btn btn-success mt-1" 
+                data-bs-toggle="modal" data-bs-target="#orderModal">
+                עדכן
+            </button>
+    </div>
+    <div class="section box">
+        <p class="title-section">מוצרים</p>
+        <%-include('../partials/orderTableItems')-%>
+    </div>
+
+    <div class="section orderSummary">
+        <p class="title-section">סיכום הזמנה</p>
+        <%-include('../partials/priceSummary')-%>
+        <div class="PanelPaymentBtn d-grid">
+            <button class="btn btn-primary" onclick="onPayBtn()">תשלום</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+<%-include('../partials/orderDetailsModal', {user})-%>
+<%-include('../partials/paymentModal', {user})-%>
+<%-include('../partials/completedOrderModal', {user})-%>
+
+<script>
+    let orderDetails = <%-JSON.stringify(user)%>;
+    let items = <%-JSON.stringify(itemsCart)%>;
+</script>
+<script src="/js/validationFrom.js"></script>
+<script src="/js/order.js"></script>

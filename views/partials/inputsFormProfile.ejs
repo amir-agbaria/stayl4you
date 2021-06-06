@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col">
+        <label for="firstName">שם משפחה:</label>
+        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="הזן שם משפחה"
+            value="<%-user.lastName%>">
+        <div class="invalid-feedback">נא להזין שם משפחה</div>
+    </div>
+    <div class="col">
+        <label for="firstName">שם פרטי:</label>
+        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="הזן שם פרטי"
+            value="<%-user.firstName%>">
+        <div class="invalid-feedback">נא להזין שם פרטי</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label for="email">אימייל:</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="example@email.com"
+            value="<%-user.email%>">
+        <div class="invalid-feedback">נא להזין מייל תקין לדוגמא: example@email.com</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label for="phone">מספר טלפון:</label>
+        <input type="text" class="form-control" name="phone" id="phone" placeholder="הזן מספר טלפון"
+            value="<%-user.phone%>" maxlength="10">
+        <div class="invalid-feedback">מספר טלפון אמור להיות מספר בן 10 ספרות המתחיל ב 05</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label for="city">עיר:</label>
+        <input type="text" class="form-control" name="city" id="city" placeholder="הזן את שם העיר שלך"
+            value="<%- user.address ? user.address.city : ''%>">
+        <div class="invalid-feedback">נא להזין עיר</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label for="street">רחוב:</label>
+        <input type="text" class="form-control" name="street" id="street" placeholder="שם רחוב, דירה, קומה, יחידה וכו'"
+            value="<%- user.address ? user.address.street : ''%>">
+        <div class="invalid-feedback">נא להזין כתובת</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <%- include('./stateChooser', {user}); %>
+            <div class="invalid-feedback">נא לבחור אזור</div>
+    </div>
+    <div class="invalid-feedback">נא לבחור אזור</div>
+    <div class="col">
+        <label for="zipCode">מיקוד:</label>
+        <input type="text" class="form-control" name="zipCode" id="zipCode" placeholder="הזן מיקוד"
+            value="<%- user.address ? user.address.zipCode : '' %>" maxlength="7">
+        <div class="invalid-feedback">מיקוד אמור להיות מספר בן 7 ספרות כגון: 1234567</div>
+    </div>
+</div>

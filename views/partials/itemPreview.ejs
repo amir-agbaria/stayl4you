@@ -1,0 +1,20 @@
+<a href="/store/item/<%-item._id%>" class="item">
+    <img src="<%-item.imgUrl%>" />
+    <div class="content">
+        <p class="title">
+        <% if(item.name.length <=33){%>
+            <%-item.name%>
+        <%} else {%>
+            <%-item.name.slice(0, 34)+'...'%>
+        <%}%>
+        </p>
+        <p class="price"><%-item.price%>₪</p>
+        <p class="description">
+        <% if(item.description.length <=65){%>
+            <%-item.description%>
+        <%} else {%>
+            <%-item.description.slice(0, 65)+'...'%>
+        <%}%>
+        </p>
+    </div>
+</a>

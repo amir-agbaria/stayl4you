@@ -1,0 +1,23 @@
+<table class="table-items table align-middle">
+        <thead>
+            <tr>
+                <th>מוצר</th>
+                <th></th>
+                <th>מידה</th>
+                <th>מחיר</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% itemsCart.forEach(function(cart){
+            const item = cart.itemID;%>
+            <tr>
+                <td class="td-img">
+                    <img src="<%-item.imgUrl%>" />
+                </td>
+                <td class="text-end"><%-item.name%></td>
+                <td><%-cart.size.toUpperCase()%></td>
+                <td>₪<%-item.price%></td>
+            </tr>
+        <%})%>
+        </tbody>
+    </table>

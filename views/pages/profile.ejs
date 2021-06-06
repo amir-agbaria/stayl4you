@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="css/profile.css">
+<div class="container">
+
+    <h1 class="mt-2">פרופיל אישי</h1>
+
+    <div class="user-details"> 
+        <div class="box">
+            <p class="title">שם:</p>
+        <%if(user.firstName && user.lastName ){%>
+            <p ><%-  user.firstName + ' ' + user.lastName  %></p>
+        <%} else {%>
+            <p>לא זמין</p>
+        <%}%> 
+        </div>
+        <div class="box">
+            <p class="title">אימייל:</p>
+        <%if(user.email ){%>
+            <p ><%- user.email %></p>
+        <%} else {%>
+            <p>לא זמין</p>
+        <%}%>
+        </div>
+        <div class="box">
+            <p class="title">טלפון:</p>
+        <%if(user.phone ){%>
+            <p ><%- user.phone %></p>
+        <%} else {%>
+            <p>לא זמין</p>
+         <%}%>
+        </div>
+        <div class="box">
+            <p class="title">כתבות:</p>
+            <div>
+            <%if(user.address){%>
+                <p class="mb-1"><%- user.address.city + ', ' + user.address.street %></p>
+                <p><%- user.address.state + ', ' + user.address.zipCode %></p>
+            <%} else {%>
+                <p>לא זמין</p>
+             <%}%>
+            </div>
+        </div>
+        <div class="mt-4">
+            <a href="profile/edit" class="btn btn-primary">
+                ערוך פרופיל
+            </a>
+        </div>
+</div>

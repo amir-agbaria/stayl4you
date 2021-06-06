@@ -1,0 +1,25 @@
+<link href='css/cart.css' rel='stylesheet' type="text/css">
+
+<div class="container-sm">
+    <h1 class="text-end my-2">סל קניות</h1>
+    <% if (itemsCart.length === 0) {%>
+    <div class="empty">
+        <h1 class="h1">אין לך עדיין מוצרים</h1>
+        <img src="/images/empty.png" alt="Empty cart" />
+        <a href="/store" class="link-primary">לחץ כאן כדי לבחור כמה</a>
+    </div>
+    
+    <%} else {%>
+    <%-include('../partials/itemsCart')-%>
+    <div class="summary mb-3">
+        <h5 class="py-2 mb-3 text-end">סיכום הזמנה</h5>
+        <div class="total-price mb-3 d-flex">
+            <%-include('../partials/priceSummary')-%>
+        </div>
+        <div class="d-grid">
+            <a class="btn btn-success" href="/order">הזמן עכשיו!</a>
+        </div>
+    </div>
+    <%}%>
+</div>
+<script src="/js/cart.js"></script>

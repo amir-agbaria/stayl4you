@@ -1,0 +1,68 @@
+<div class="modal" id="paymentModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">פרטי תשלום</h5>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" id="paymentFromDetails">
+                    <div class="row align">
+                        <div class="col">
+                            <label for="lastName">שם משפחה</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName">
+                            <div class="invalid-feedback">נא להזין שם משפחה</div>
+                        </div>
+                        <div class="col">
+                            <label for="firstName">שם פרטי</label>
+                            <input type="text" class="form-control" name="firstName" id="firstName">
+                            <div class="invalid-feedback">נא להזין שם פרטי</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="cardNumber">מספר כרטיס</label>
+                            <input type="text" class="form-control" name="cardNumber" id="cardNumber">
+                            <div class="invalid-feedback">נא להזין מספר כרטיס</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label>תאריך תפוגה</label>
+                        <div class="col">
+                            <select class="form-select" name="expirationMonth">
+                                <option value="" selected disabled>חודש</option>
+                                <% for(var i=1; i<=12; i++){%>
+                                    <option value="<%-i%>">
+                                        <%-i%>
+                                    </option>
+                                    <%}%>
+                            </select>
+                            <div class="invalid-feedback">נא לבחור יום</div>
+                        </div>
+                        <div class="col">
+                            <select class="form-select" name="expirationYear">
+                                <option value="" selected disabled>שנה</option>
+                                <% for(var i=new Date().getFullYear(); i<=new Date().getFullYear()+28; i++){%>
+                                    <option value="<%-i%>">
+                                        <%-i%>
+                                    </option>
+                                    <%}%>
+                            </select>
+                            <div class="invalid-feedback">נא לבחור שנה</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="securityCode">קוד ביטחון</label>
+                            <input type="text" class="form-control" name="securityCode" id="securityCode" placeholder="CVV/CVC/CID"  maxlength="3">
+                            <div class="invalid-feedback">נא להזין קוד ביטחון</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-start">
+                        <button type="submit" class="btn btn-primary">אישור</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ביטול</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

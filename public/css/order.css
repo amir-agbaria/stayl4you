@@ -1,0 +1,37 @@
+.red-color {
+  color: red;
+}
+
+.section {
+  width: 400px;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.section-row {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.title-section {
+  padding: 0 5px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.section .content {
+  padding-right: 10px;
+}
+
+.table-items {
+  font-size: 14px;
+}
+
+.table-items img {
+  width: 40px;
+}
+
+.orderSummary button {
+  margin: 0 50px;
+}

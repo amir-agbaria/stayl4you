@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="css/signForm.css">
+
+<div class="container p-sm-3">
+    <h1>הרשמה</h1>
+    <% if(errors!=null && errors.length>0){%>
+        <div class="errors-contine">
+            <% errors.forEach(function(error) { %>
+                <p class="error-msg"> <%-error.msg%> </p>
+            <%})%>
+        </div>
+    <%}%>
+    <form action="/signup" method="post" class="needs-validation mb-2">
+        <input type="email" class="form-control mb-2" name="email" value="<%- dataForm.email %>" id="email"
+            placeholder="כתובת מייל">
+        <input type="password" class="form-control mb-2" id="password" name="password" value="<%- dataForm.password %>"
+            placeholder="סיסמא" autocomplete="off">
+        <input type="password" class="form-control mb-4" id="confirmPass" name="confirmPass" value="<%- dataForm.confirmPass %>"
+            placeholder="הזן סיסמא שנית" autocomplete="off">
+        <button class="btn btn-primary" type="submit">הרשמה</button>
+    </form>
+    <a href="/login">!יש לך כבר שם משתמש? לחץ כאן</a>
+</div>
+
+<script>
+    const errors = <%-JSON.stringify(errors) %>;
+    const user = <%- JSON.stringify(user) %>
+    if (user !== null) {
+        localStorage.setItem('user', JSON.stringify(user));
+        location.href = '/';
+    }
+</script>
+<script src="js/validationFrom.js"></script>
+<script>formVerification(errors);</script>

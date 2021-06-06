@@ -1,0 +1,18 @@
+.box {
+  margin-bottom: 5px;
+}
+.box p {
+  margin: 0;
+}
+
+.table-items {
+  font-size: 14px;
+}
+
+.table-items tbody img {
+  width: 25px;
+}
+
+.td-img {
+  width: 30px;
+}

@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/css/item.css">
+<div class="container d-flex justify-content-center p-sm-5 p-1">
+    <div style="width: fit-content;">
+        <h1 class="title">
+            <%-item.name%>
+        </h1>
+        <p class="description mb-3">
+            <%-item.description%>
+        </p>
+        <div class="d-flex flex-column align-items-center">
+            <div class="img-contain p-2">
+                <img src="<%-item.imgUrl%>" />
+            </div>
+        </div>
+        <div>
+            <p class="price mt-2">
+                מחיר: ₪<%-item.price%>
+            </p>
+            <form action="/store/item/<%-item._id%>" method="post">
+                <h5>מידה:</h5>
+                <div class="sizes mb-4 d-flex">
+                    <%item.sizes.forEach(function(size){%>
+                        <input type="radio" class="btn-check" name="size" value="<%-size%>" id="<%-size%>Size" required>
+                        <label class="btn btn-outline-primary btn-sm m-1" for="<%-size%>Size">
+                            <%-size%>
+                        </label>
+                        <%})%>
+                </div>
+                <button class="btn btn-primary" type="submit">הוסף לעגלה</button>
+            </form>
+        </div>
+    </div>
+</div>

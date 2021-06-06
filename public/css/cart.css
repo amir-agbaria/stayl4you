@@ -1,0 +1,51 @@
+.img-item {
+  width: 100px;
+  padding: 2px;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 3px;
+}
+
+tbody td {
+  vertical-align: middle;
+}
+
+tbody .size,
+tbody .price,
+tbody .actions,
+th {
+  text-align: center;
+}
+
+.empty {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty a {
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+.summary {
+  padding: 20px;
+  width: 350px;
+  max-width: 100%;
+}
+.summary h5 {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.summary a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.summary .total-price {
+  border-bottom: 1px solid #ccc;
+}
+
+.summary .total-price span {
+  font-weight: bold;
+}

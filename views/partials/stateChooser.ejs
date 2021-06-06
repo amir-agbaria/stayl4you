@@ -1,0 +1,13 @@
+<% 
+    var states = ['מרכז', 'השרון', 'תל אביב', 'חיפה', 'יהודה ושומרון', 'ירושלים', 'דרום', 'צפון'];
+%>
+
+<label for="state">מחוז/אזור:</label>
+<select class="form-select" name="state" id="state">
+    <option value="" <%if( !user.address || !user.address.state) { %> selected <% } %> disabled>בחר אזור</option>
+<% states.forEach(function(state){%>
+    <option value="<%-state%>" <%if(user.address && user.address.state == state) { %> selected <% } %>>
+        <%-state%> 
+    </option>
+<%})%>
+</select>

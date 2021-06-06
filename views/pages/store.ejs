@@ -1,0 +1,14 @@
+<link href='css/store.css' rel='stylesheet' type="text/css">
+
+<div class="container-lg">
+<% if(items.length === 0) { %>
+    <div class="alert alert-warning mt-4" role="alert">
+        .לא נמצאו מוצרים
+    </div>
+<% } %>
+    <div class="items-contain">
+    <% items.forEach(function (item) {%>
+        <%- include('../partials/itemPreview', {item: item}); %>
+    <% }); %>
+    </div>
+</div>

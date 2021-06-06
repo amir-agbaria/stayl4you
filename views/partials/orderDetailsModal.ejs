@@ -1,0 +1,18 @@
+<div class="modal" id="orderModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">פרטי משלוח</h5>
+      </div>
+      <div class="modal-body">
+        <form class="needs-validation" id="orderFromDetails">
+          <%- include('./inputsFormProfile', {user}); %>
+          <div class="modal-footer justify-content-start">
+            <button type="submit" class="btn btn-primary">שמור</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ביטול</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

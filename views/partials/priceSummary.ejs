@@ -1,0 +1,10 @@
+<% 
+    var totalPrice = 0;
+    itemsCart.forEach(function(cart) { 
+        var item= cart.itemID;
+        totalPrice += item.price 
+    })
+%>
+        <p class="mb-3 me-2">
+            <span>מחיר סופי:</span> ₪<%- totalPrice %>
+        </p>

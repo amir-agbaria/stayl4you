@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/historyOrders.css">
+<div class="contiane">
+    <h1>היסטוריית רכישות</h1>
+
+<%if(!orders || orders.length === 0) {%>
+    <h3 class="mt-4">היסטוריית הרכישות שלך ריקה</h3>
+<%} else {%>
+    <% orders.forEach(function(order){%>
+    <div class="card  mb-2">
+        <div class="card-header">
+            <table class="table-details table table-borderless m-0">
+                <tr>
+                    <th class="text-end">מספר הזמנה:</th>
+                    <td ><%-order._id%></td>
+                    <td class="text-center" colspan="2"><a href="/history/<%-order._id%>">פרטים נוספים</a></td>
+                    <td rowspan="2" class="align-bottom text-center">
+                        <button class="btn btn-danger m-auto" onclick="onDeleteOrder('<%-order._id%>')">
+                            הסר
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>תאריך הזמנה:</th>
+                    <td><%-order.orderDate.toString().substring(0, 15)%></td>
+                    <th>מחיר הזמנה:</th>
+                    <td><%-order.totalPrice%>₪</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-body">
+        <% order.items.forEach(function(item){%>
+            <table class="table table-items">
+               <tr> 
+                    <td class="item-img">
+                        <img src="<%-item.itemID.imgUrl%>" />
+                    </td>
+                    <td class="item-name">
+                        <a href="/store/item/<%-item.itemID._id%>"><%-item.itemID.name%></a>
+                    </td>
+                </tr>
+            </table>
+        <%})%>
+        </div>
+    </div>
+    <%})
+}%>
+</div>
+<script src="/js/orderHistory.js"></script>

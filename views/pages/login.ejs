@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="css/signForm.css">
+
+<div class="container p-sm-3">
+    <h1 class="mb-4">התחברות</h1>
+    <% if(errors!=null && errors.length>0){%>
+        <div class="errors-contine">
+            <% errors.forEach(function(error) { %>
+                <p class="error-msg"> <%-error.msg%> </p>
+            <%})%>
+        </div>
+    <%}%>
+    <form action="/login" method="post" class="needs-validation m-2">
+        <input type="email" class="form-control mb-3" name="email" value="<%- dataForm.email %>" id="email"
+            placeholder="כתובת מייל">
+        <input type="password" class="form-control mb-4" id="password" name="password" value="<%- dataForm.password %>"
+                placeholder="סיסמא" autocomplete="off">
+        <button class="btn btn-primary" type="submit">התחבר</button>
+    </form>
+</div>
+
+<script>
+    const errors = <%-JSON.stringify(errors) %>;
+    const user = <%-JSON.stringify(user) %>;
+    if (user !== null) {
+        localStorage.setItem('user', JSON.stringify(user));
+        location.href = '/store';
+    }
+</script>
+<script src="js/validationFrom.js"></script>

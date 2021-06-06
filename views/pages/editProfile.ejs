@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="../css/editProfile.css">
+
+<div class="container">
+
+    <h1>עריכת פרופיל</h1>
+
+    <form action="/profile/edit" method="post" class="needs-validation" >
+        <!-- Inputs form -->
+         <%- include('../partials/inputsFormProfile', {user}); %>
+        <div>
+            <button type="submit" class="btn btn-success">שמור</button>
+            <a href="/profile" class="btn btn-danger">ביטול</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    const errors = <%-JSON.stringify(errors)%>;
+</script>
+<script src="/js/validationFrom.js"></script>
+<script>formVerification(errors);</script>

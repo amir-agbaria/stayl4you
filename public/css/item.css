@@ -1,0 +1,38 @@
+.container {
+  font-weight: bold;
+}
+
+.title {
+  text-align: right;
+}
+
+h5 {
+  font-weight: bold;
+  text-align: right;
+}
+
+.price {
+  font-size: 1.2rem;
+}
+
+.img-contain {
+  width: 500px;
+  max-width: 90%;
+  border-radius: 10px;
+  border: 2px solid #dfdfdf;
+  margin: 0;
+}
+
+.img-contain {
+  margin: 0;
+}
+
+.sizes .btn-group-sm > .btn,
+.btn-sm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}

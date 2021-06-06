@@ -1,0 +1,29 @@
+<table class="table table-hover align-middle mt-4">
+        <thead>
+            <tr>
+                <th>מוצר</th>
+                <th></th>
+                <th>מידה</th>
+                <th>מחיר</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <% itemsCart.forEach(function(cart){
+            const item = cart.itemID;%>
+            <tr>
+                <td class="img">
+                    <img class="img-item" src="<%-item.imgUrl%>" />
+                </td>
+                <td class="name"><%-item.name%></td>
+                <td class="size"><%-cart.size.toUpperCase()%></td>
+                <td class="price">₪<%-item.price%></td>
+                <td class="actions">
+                    <button class="btn btn-danger"  onclick="onDeleteItem('<%-cart._id%>')">
+                        הסר מהסל
+                    </button>
+                </td>
+            </tr>
+        <%})%>
+        </tbody>
+    </table>

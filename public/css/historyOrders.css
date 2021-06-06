@@ -1,0 +1,26 @@
+.contiane {
+  margin: auto;
+  width: 960px;
+  max-width: 100%;
+  min-width: 620px;
+}
+.card-header {
+  background-color: #ececec;
+}
+.table-details td,
+.table-details th {
+  text-align: right;
+  padding: 0 0 5px;
+}
+
+.table-details th {
+  width: 120px;
+}
+
+.table-items .item-img {
+  width: 50px;
+}
+
+.table-items .item-name {
+  font-size: 12px;
+}
